@@ -1,0 +1,31 @@
+table{
+  width: 80%;
+  margin: 1.2rem auto;
+}
+.mat-card{
+width: 27%;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+.mat-card-footer{
+  margin:.5rem 0;
+  text-align: center;
+}
+.example-full-width{
+  width: 80%;
+}
+.search-container{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.search{
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 8px 10px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, .4),
+  -1px -1px 5px rgba(33, 33, 33, .4);
+}
