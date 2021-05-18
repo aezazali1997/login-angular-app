@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+interface IResponse {
+  succes: boolean;
+  token: string;
+}
 interface ISelection {
   value: string;
   viewValue: string;
@@ -52,11 +56,14 @@ export class LoginComponent implements OnInit {
     this.credentials['email'] = this.email;
     this.credentials['password'] = this.pass;
     try {
-      this.http.post(this.url, this.credentials).subscribe((data) => {
-        if (data) {
-          this._route.navigateByUrl('/posts');
-        }
-      });
+      this.http
+        .post<IResponse>(this.url, this.credentials)
+        .subscribe((data) => {
+          if (data) {
+            console.log(data.token);
+            // this._route.navigateByUrl('/posts');
+          }
+        });
     } catch (er) {
       console.log(er);
     }
